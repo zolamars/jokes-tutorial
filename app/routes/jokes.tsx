@@ -1,10 +1,6 @@
 import type { LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import {
-  Link,
-  Outlet,
-  useLoaderData,
-} from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 import stylesUrl from "~/styles/jokes.css";
 import { db } from "~/utils/db.server";
@@ -25,18 +21,13 @@ export const loader = async () => {
 
 export default function JokesRoute() {
   const data = useLoaderData<typeof loader>();
-  console.log(data)
 
   return (
     <div className="jokes-layout">
       <header className="jokes-header">
         <div className="container">
           <h1 className="home-link">
-            <Link
-              to="/"
-              title="Remix Jokes"
-              aria-label="Remix Jokes"
-            >
+            <Link to="/" title="Remix Jokes" aria-label="Remix Jokes">
               <span className="logo">🤪</span>
               <span className="logo-medium">J🤪KES</span>
             </Link>
